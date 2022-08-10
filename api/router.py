@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.main import predict
+from api.main import predict
 from fastapi.staticfiles import StaticFiles
 import pathlib
 
