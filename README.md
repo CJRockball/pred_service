@@ -12,4 +12,19 @@
 ## Background
 
 
-## 
+## Coding Components
+
+
+## Site Overview
+
+
+## Comment on Training
+
+
+## Comment on db
+
+
+## Comment on pytest
+
+
+## Comment on Deploying, FasrtAPI
