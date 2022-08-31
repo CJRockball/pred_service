@@ -1,7 +1,9 @@
 import pandas as pd
 import joblib
+import json
 import numpy as np
 from  api.custom_trans import log_transform, func, inverse_func
+from api.db_utils import write_data
 from fastapi import HTTPException
 
 def predict_test_data(json_data):    
@@ -19,3 +21,14 @@ def predict_test_data(json_data):
     
     return predict_dict
 
+def db_load(json_data, pred_dict):
+    data_dict = json_data[0]
+    del data_dict['total_bill']
+    
+    data_dict['bill_prediction'] = pred_dict['y_pred']
+    df = pd.DataFrame([data_dict], columns=['tip', 'sex', 'smoker', 'day', 'time', 'g_size','bill_prediction'])
+    
+    write_data(df)
+    
+    return
+    

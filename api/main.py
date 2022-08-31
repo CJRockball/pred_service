@@ -5,7 +5,7 @@ from starlette.responses import FileResponse
 from typing import Optional
 import logging
 from api.data_util import get_test_data, get_random_test_row_db
-from api.util import predict_test_data
+from api.util import predict_test_data, db_load
 
 
 ROOT_DIR = pathlib.Path(__file__).resolve().parent.parent
@@ -74,6 +74,7 @@ async def get_random_test():
 
     if return_data.status_code == 200:
         pred_dict = predict_test_data(return_json)
+        db_load(return_json, pred_dict)
         return pred_dict
     else:
         raise HTTPException(status_code=return_data.status_code, detail="Data not found")
