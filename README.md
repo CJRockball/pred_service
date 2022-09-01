@@ -4,13 +4,13 @@ This project is looking at the tips dataset. The goal is to predict a waiter's t
 The app and database has been uploaded to Heroku. Try it out here
 
 ## Outline
-- Background
+- [Background](#background)
 - Coding components, sklearn lin red, notebooks, mlflow, rmdbs, pytest, 
-- Site Overview
-- Comment on training
-- Comment on db
-- Comment on pytest
-- Comment on deploying, fastapi
+- [Site Overview](#site-overview)
+- [Comment on training](#comment-on-training)
+- [Comment on database](#comment-on-database)
+- [Comment on pytest](#comment-on-pytest)
+- [Comment on deploying](#comment-on-deploying)
 - [Run](#run)
 
 ## Background
