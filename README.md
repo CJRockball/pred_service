@@ -9,6 +9,7 @@ This project is looking at the tips dataset. The goal is to predict a waiter's t
 - Comment on db
 - Comment on pytest
 - Comment on deploying, fastapi
+- Run
 
 ## Background
 
@@ -32,3 +33,25 @@ This project is looking at the tips dataset. The goal is to predict a waiter's t
 
 
 ## Comment on Deploying, FasrtAPI
+
+## Run
+# Run from File
+* Clone the db_service repo
+* Run database. In the terminal, got to the database folder. Run `uvicorn api.router:app --reload --port 8001`
+* Open browser at `127.0.0.1:8001/tips/`. The response will be "message: hello world tips" to confirm that it works.
+* Clone pred_service repo
+* Open the data_util file in the api folder. Change the clients to the host.docker ones
+* In a terminal go to folder and run `uvicorn api.router:app --reload`
+* Open a browser window at `127.0.0.1:8000/predict/`. The response will be "meassage: Hello world" to confirm that it works.
+
+### To Run from Docker
+* Clone the db_service repo
+* Change the last line in the Dokerfile, commnet the current CMD line and uncomment the above CMD line
+* In a terminal go to folder and run `docker build -t name .` 
+* Then run `docker run -dp 8001:8001 name`
+* Open browser at `127.0.0.1:8001/tips/`. The response will be "message: hello world tips" to confirm that it works.
+* Clone pred_service repo
+* Change the last line in the Dokerfile, commnet the current CMD line and uncomment the above CMD line
+* In a terminal go to folder and run `docker build -t name .` 
+* Then run `docker run -dp 8000:8000 name`
+* Open browser at `127.0.0.1:8000/predict/`. The response will be "message: Hello world" to confirm that it works.
