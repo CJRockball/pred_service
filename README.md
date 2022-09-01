@@ -14,6 +14,12 @@ The app and database has been uploaded to Heroku. Try it out here
 - [Run](#run)
 
 ## Background
+The tips data set is a very basic example of regression. It still offers an opportunity to demonstrate many different aspects of machine learning for modeling, pipeline and serving. 
+
+The EDA and modeling can be found in the notebook. The dataset is set up as two object, one to load the data and one to set up a pipeline with data transformation. For the models I mainly explore linear ones, after optimizing some non-linear models are tried, without improving metrics. And so I keep the simplest one for production.
+
+The prediction model is set up for production using FastAPI and Docker. The code can be run by cloning the repo and running the docker or trying it out on Heroku. The prediction demo samples rows from the training dataset, predicts and returns the true value and the prediction as json data.
+
 
 ## Site Overview
 The various functionality can be accessed through the address field of the browser. For local implementation the address for the prediction function will be `'127.0.0.1:8000/predict/` and the Heroku address xxx. For the database it will be `127.0.0.1:8001/tips` and the Heroku address xxx. The following links are implemented
