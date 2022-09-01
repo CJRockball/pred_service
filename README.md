@@ -11,17 +11,23 @@ The app and database has been uploaded to Heroku. Try it out here
 - Comment on db
 - Comment on pytest
 - Comment on deploying, fastapi
-- Run
+- [Run](#run)
 
 ## Background
 
 ## Site Overview
 The various functionality can be accessed through the address field of the browser. For local implementation the address for the prediction function will be `'127.0.0.1:8000/predict/` and the Heroku address xxx. For the database it will be `127.0.0.1:8001/tips` and the Heroku address xxx. The following links are implemented
-### predict
+### Predict
 * `/` returns hello world message
 * `/get_test_data` gets all the test data from the database and returns as json.
 * `/get_random_test_data` gets a random row of test data from the database and returns as json data.
 * '/get_test_prediction' gets a random row of test data from the database. Performs prediction. Saves test data and prediction to the prediction database. Returns prediction and the true value as json data
+
+### Database
+* `/` returns hello world message
+* `/test_data` returns test data
+* `/train_data` returns training data
+* `/get_random_test_data` returns one random row of test data
 
 ## Coding Components
 ### Folder layout
