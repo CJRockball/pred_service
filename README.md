@@ -1,6 +1,8 @@
 # Prediction Demo
 This project is looking at the tips dataset. The goal is to predict a waiter's tip. It can be found [here](https://www.kaggle.com/code/sanjanabasu/tips-dataset/data). It's a very small dataset with 243 entries. It has continuous and categorical(nominal and ordinal) features and it has a continuous label, so it's a regression problem. However, it turns out only one feature is needed for the tip prediction, so let's try to explain the total_bill price instead.
 
+The app and database has been uploaded to Heroku. Try it out here
+
 ## Outline
 - Background
 - Coding components, sklearn lin red, notebooks, mlflow, rmdbs, pytest, 
@@ -13,6 +15,13 @@ This project is looking at the tips dataset. The goal is to predict a waiter's t
 
 ## Background
 
+## Site Overview
+The various functionality can be accessed through the address field of the browser. For local implementation the address for the prediction function will be `'127.0.0.1:8000/predict/` and the Heroku address xxx. For the database it will be `127.0.0.1:8001/tips` and the Heroku address xxx. The following links are implemented
+### predict
+* `/` returns hello world message
+* `/get_test_data` gets all the test data from the database and returns as json.
+* `/get_random_test_data` gets a random row of test data from the database and returns as json data.
+* '/get_test_prediction' gets a random row of test data from the database. Performs prediction. Saves test data and prediction to the prediction database. Returns prediction and the true value as json data
 
 ## Coding Components
 ### Folder layout
@@ -35,7 +44,10 @@ This project is looking at the tips dataset. The goal is to predict a waiter's t
 ## Comment on Deploying, FasrtAPI
 
 ## Run
-# Run from File
+### Heroku Site
+* Click link
+
+### Run from File
 * Clone the db_service repo
 * Run database. In the terminal, got to the database folder. Run `uvicorn api.router:app --reload --port 8001`
 * Open browser at `127.0.0.1:8001/tips/`. The response will be "message: hello world tips" to confirm that it works.
@@ -44,7 +56,7 @@ This project is looking at the tips dataset. The goal is to predict a waiter's t
 * In a terminal go to folder and run `uvicorn api.router:app --reload`
 * Open a browser window at `127.0.0.1:8000/predict/`. The response will be "meassage: Hello world" to confirm that it works.
 
-### To Run from Docker
+### Run from Docker
 * Clone the db_service repo
 * Change the last line in the Dokerfile, commnet the current CMD line and uncomment the above CMD line
 * In a terminal go to folder and run `docker build -t name .` 
