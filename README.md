@@ -20,11 +20,21 @@ The EDA and modeling can be found in the notebook. The dataset is set up as two 
 
 The prediction model is set up for production using FastAPI and Docker. The code can be run by cloning the repo and running the docker or trying it out on Heroku. The prediction demo samples rows from the training dataset, predicts and returns the true value and the prediction as json data.
 
+## Folder Layout
+The folder layout is structured for the FastAPI prediction app, with support files for running on heroku in the root. However, since this is a demo Jupyter notebooks are uploaded as well as unit testing files.
+
+XXX ADD FOLDER TREE
+
+
 
 ## Site Overview
+The prediction and the data storage is separated, to be a bit more realistic. The repo db_data_service contains an sqlite database with the tips dataset. The dataset is divided in two tables, train and test. The data is accessed via http and served in json format.  
+
+
+
 The various functionality can be accessed through the address field of the browser. For local implementation the address for the prediction function will be `'127.0.0.1:8000/predict/` and the Heroku address xxx. For the database it will be `127.0.0.1:8001/tips` and the Heroku address xxx. The following links are implemented
 ### Predict
-* `/` returns hello world message
+* `/` returns hello world message and endpoints, with a desription, for this site.
 * `/get_test_data` gets all the test data from the database and returns as json.
 * `/get_random_test_data` gets a random row of test data from the database and returns as json data.
 * '/get_test_prediction' gets a random row of test data from the database. Performs prediction. Saves test data and prediction to the prediction database. Returns prediction and the true value as json data

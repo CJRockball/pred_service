@@ -27,7 +27,8 @@ predict = APIRouter()
 
 @predict.get('/')
 def root():
-    return {'message':"hello world"}
+    return {'/': 'Hello world', '/get_test_data':'Returns all test data',\
+        '/get random_test_row': 'Returns a random row of test data', '/get_test_prediction': 'Returns prediction, and true value, of a random test row'}
 
 
 @predict.get("/favicon.ico", include_in_schema=False)
