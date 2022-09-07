@@ -4,8 +4,8 @@ This project is looking at the tips dataset. The goal is to predict a waiter's t
 The app and database has been uploaded to Heroku. Try it out here
 
 ## Outline
+- [TL;DR](#TL;DR)
 - [Background](#background)
-- Coding components, sklearn lin red, notebooks, mlflow, rmdbs, pytest, 
 - [Site Overview](#site-overview)
 - [Comment on training](#comment-on-training)
 - [Comment on database](#comment-on-database)
@@ -13,10 +13,15 @@ The app and database has been uploaded to Heroku. Try it out here
 - [Comment on deploying](#comment-on-deploying)
 - [Run](#run)
 
+## TL;DR
+Prediction demo
+
 ## Background
 The tips data set is a very basic example of regression. It still offers an opportunity to demonstrate many different aspects of machine learning for modeling, pipeline and serving. 
 
 The EDA and modeling can be found in the notebook. The dataset is set up as two object, one to load the data and one to set up a pipeline with data transformation. For the models I mainly explore linear ones, after optimizing some non-linear models are tried, without improving metrics. And so I keep the simplest one for production.
+
+The prediction service is set up like a microservice with two nodes. One with the prediction function and a db to save new data. 
 
 The prediction model is set up for production using FastAPI and Docker. The code can be run by cloning the repo and running the docker or trying it out on Heroku. The prediction demo samples rows from the training dataset, predicts and returns the true value and the prediction as json data.
 
@@ -55,15 +60,18 @@ The various functionality can be accessed through the address field of the brows
 
 
 ## Comment on Training
-
+xxx
+After some initial examination of the dataset the loading function, setting up of data subsets and creating the pipeline are done by two objects. The code is available in the notebooks folder as tipsdata.py and tipspipe.py.
 
 ## Comment on db
+To demonstrate the prediction algorithm I just feed in a random row from the test dataset. So the database is set up to have two tables one with the training set and one with the test set. The database has some protection against injection through parameterized select statements.
 
+There is also a database on the prediction site, to save the "new" query and the prediction, for future use and to make the demo slightly more realistic.
 
 ## Comment on pytest
 
 
-## Comment on Deploying, FasrtAPI
+## Comment on Deploying, FastAPI
 
 ## Run
 ### Heroku Site
