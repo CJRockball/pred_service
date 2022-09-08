@@ -1,5 +1,5 @@
 ## Tips Dataset
-[Web demo prediction](http://patricks-predictions.herokuapp.com/predict/)[database online access](http://db-data-service.herokuapp.com/tips/)
+[Web demo] prediction(http://patricks-predictions.herokuapp.com/predict/) database [online access](http://db-data-service.herokuapp.com/tips/)
 ### TL;DR
 The tips data set is a very basic example of regression. It still offers an opportunity to demonstrate many different aspects of machine learning for modeling, pipeline and serving. 
 
