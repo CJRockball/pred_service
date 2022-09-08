@@ -44,7 +44,7 @@ async def check_test_data():
     if test_data_json is None:
         raise HTTPException(status_code=404, detail="No connection to API")
     
-    if test_data_json.status_code == 200 | test_data_json.status_code == 307:
+    if test_data_json.status_code == 200 or test_data_json.status_code == 307:
         return test_data_json.json()
     else:
         raise HTTPException(status_code=test_data_json.status_code, detail="Data not found")
@@ -58,7 +58,7 @@ async def get_random_test():
     if test_data_json is None:
         raise HTTPException(status_code=404, detail="No connection to API")
 
-    if test_data_json.status_code == 200 | test_data_json.status_code == 307:
+    if test_data_json.status_code == 200 or test_data_json.status_code == 307:
         return test_data_json.json()
     else:
         raise HTTPException(status_code=test_data_json.status_code, detail="Data not found")
@@ -73,7 +73,7 @@ async def get_random_test():
     if return_data is None:
         raise HTTPException(status_code=404, detail="No connection to API")
 
-    if return_data.status_code == 200 | return_data.status_code == 307:
+    if return_data.status_code == 200 or return_data.status_code == 307:
         pred_dict = predict_test_data(return_json)
         db_load(return_json, pred_dict)
         return pred_dict

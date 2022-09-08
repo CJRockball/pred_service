@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 from api.main import predict
 from api.util import predict_test_data
-from api.ata_util import get_test_data, get_random_test_row_db
+from api.data_util import get_test_data, get_random_test_row_db
 import pytest
 from unittest import mock
 from unittest.mock import Mock
@@ -15,7 +15,8 @@ def test_main_root():
     """dummy test"""
     response = client.get('/')
     assert response.status_code == 200
-    assert response.json() == {'message':"hello world"}
+    assert response.json() == {'/': 'Hello world', '/get_test_data':'Returns all test data',\
+        '/get random_test_row': 'Returns a random row of test data', '/get_test_prediction': 'Returns prediction, and true value, of a random test row'}
     
 @mock.patch('api.main.get_random_test_row_db')
 def test_main_get_random_test_row_mock(mock_get, dummy_dict_list):
