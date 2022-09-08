@@ -15,7 +15,8 @@ The app and database has been uploaded to Heroku. Try it out here
 
 ## TL;DR
 Prediction demo
-### 1. Data set
+### 1. Dataset
+The data is 243 rows of restaurant related information. I try to predict the total bill from a set of categorical (ordinal and nominal) and contiuous features. After an initial review I created two data related objects ([testdata](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipsdata.py) and [testpipe](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipspipe.py))
 
 ### 2. EDA
 
