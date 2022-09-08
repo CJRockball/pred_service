@@ -15,13 +15,13 @@ The app and database has been uploaded to Heroku. Try it out here
 
 ## TL;DR
 Prediction demo
-1. Data set
-2. EDA
-3. Prdictions
-4. Microservice
-5. Displaying with FastAPI
-6. Pytest
-7. Serving with Docker and Heroku 
+#1. Data set
+#2. EDA
+#3. Prdictions
+#4. Microservice
+#5. Displaying with FastAPI
+#6. Pytest
+#7. Serving with Docker and Heroku 
 
 ## Background
 The tips data set is a very basic example of regression. It still offers an opportunity to demonstrate many different aspects of machine learning for modeling, pipeline and serving. 
