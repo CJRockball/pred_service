@@ -16,7 +16,7 @@ The app and database has been uploaded to Heroku. Try it out here
 ## TL;DR
 Prediction demo
 ### 1. Dataset
-The data is 243 rows of restaurant related information. I try to predict the total bill from a set of categorical (ordinal and nominal) and contiuous features. After an initial review I created two data related objects ([testdata](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipsdata.py) and [testpipe](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipspipe.py))
+The data is 243 rows of restaurant related information. I try to predict the total bill from a set of categorical (ordinal and nominal) and contiuous features. After an initial review I created two data related objects ([testdata](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipsdata.py) and [testpipe](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipspipe.py)). Tipsdata downloads and splits the dataset in train, val and test. Tipspipe creates sklearn pipeline for transformations and models. These are used as backends for the EDA/model notebook 
 
 ### 2. EDA
 
