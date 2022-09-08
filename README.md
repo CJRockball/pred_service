@@ -16,11 +16,12 @@ The app and database has been uploaded to Heroku. Try it out here
 ## TL;DR
 Prediction demo
 ### 1. Dataset
-The data is 243 rows of restaurant related information. I try to predict the total bill from a set of categorical (ordinal and nominal) and contiuous features. After an initial review I created two data related objects ([testdata](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipsdata.py) and [testpipe](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipspipe.py)). Tipsdata downloads and splits the dataset in train, val and test. Tipspipe creates sklearn pipeline for transformations and models. These are used as backends for the EDA/model notebook 
+The data is 243 rows of restaurant related information. I try to predict the total bill from a set of categorical (ordinal and nominal) and contiuous features. After an initial review I created two data related objects ([testdata](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipsdata.py) and [testpipe](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipspipe.py)). Tipsdata downloads and splits the dataset in train, val and test. Tipspipe creates sklearn pipeline for transformations and models. These are used as backends for the EDA/model [notebook](https://github.com/CJRockball/pred_service/blob/main/notebooks/eda_model.ipynb) 
 
 ### 2. EDA
+The EDA starts with examening the dataset, there are no missing values. Then I count, rows, features, labels etc. Then there is a visual inspection of the balance of features, some of them are quite unbalanced. Unfortunately the dataset is too small to downsample. I use IQR charts to determine if the categorical features correlate to the label. Only group size has a strong correlation.  Then I look at the distribution of the continuous feature, tips, and the label, total_bill. Both are skewed and are log-transformed in the pipeline. Finally the correlation between them is calculated and visualized. There is a reasonably strong correlation.
 
-### 3. Prdictions
+### 3. Model/Prdictions
 
 ### 4. Microservice
 
