@@ -35,11 +35,6 @@ def root():
 async def favicon():
     return FileResponse(favicon_path)
 
-@predict.get('/log')
-def display_log():
-    
-    
-    return
 
 @predict.get("/get_test_data")
 async def check_test_data():
