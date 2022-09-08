@@ -6,6 +6,7 @@ The EDA and modeling can be found in the notebook. The dataset is set up as two 
 The prediction service is set up like a microservice with two nodes. One with the prediction function and a db to save new data. 
 
 The prediction model is set up for production using FastAPI and Docker. The code can be run by cloning the repo and running the docker or trying it out on Heroku. The prediction demo samples rows from the testing dataset, predicts and returns the true value and the prediction as json data.
+Try prediction [here](http://patricks-predictions.herokuapp.com/predict/), access database [here](http://db-data-service.herokuapp.com/tips/), database code in github [here](https://github.com/CJRockball/db_data_service)
 
 ### 1. Dataset
 The data is 243 rows of restaurant related information. I try to predict the total bill from a set of categorical (ordinal and nominal) and contiuous features. After an initial review I created two data related objects ([testdata](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipsdata.py) and [testpipe](https://github.com/CJRockball/pred_service/blob/main/notebooks/tipspipe.py)). Tipsdata downloads and splits the dataset in train, val and test. Tipspipe creates sklearn pipeline for transformations and models. These are used as backends for the EDA/model [notebook](https://github.com/CJRockball/pred_service/blob/main/notebooks/eda_model.ipynb) 
