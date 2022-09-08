@@ -34,8 +34,6 @@ FatAPI is used to display the data (see main script [here](https://github.com/CJ
 ### 6. Pytest
 Pytest is used to unit test functions. This is usually not included in the repo, but kept in here for demo purpose.
 ![](https://github.com/CJRockball/pred_service/blob/main/static/coverage.png)
-
-
 ### 7. Serving with Docker and Heroku 
 All the scripts are packaged with Docker. The whole app can be downloaded and run with docker, see the [run description](#Run-from-Docker). I have also uploaded the app to Heroku for online testing. 
 
