@@ -1,0 +1,45 @@
+2022-09-11 17:29:04,882 INFO     
+Trained model Linear_regression, 
+parameters: LinearRegression(), 
+model r2 score: 0.516, rmse: 6.608, mae: 4.927, mape: 0.251
+2022-09-11 17:29:04,907 INFO     
+Trained model Ridge, 
+parameters: RidgeCV(), 
+model r2 score: 0.515, rmse: 6.610, mae: 4.959, mape: 0.255
+2022-09-11 17:29:04,930 INFO     
+Trained model Lasso, 
+parameters: Lasso(alpha=0.001), 
+model r2 score: 0.515, rmse: 6.609, mae: 4.928, mape: 0.251
+2022-09-11 17:29:04,952 INFO     
+Trained model Elasticnet, 
+parameters: ElasticNet(alpha=0.1, l1_ratio=0.4), 
+model r2 score: 0.512, rmse: 6.635, mae: 5.002, mape: 0.259
+2022-09-11 17:29:05,884 INFO     
+Trained model Linear_regression, 
+parameters: LinearRegression(), 
+model r2 score: 0.530, rmse: 6.512, mae: 4.760, mape: 0.238
+2022-09-11 17:29:05,915 INFO     
+Trained model Ridge, 
+parameters: RidgeCV(), 
+model r2 score: 0.528, rmse: 6.522, mae: 4.782, mape: 0.240
+2022-09-11 17:29:05,944 INFO     
+Trained model Lasso, 
+parameters: Lasso(alpha=0.001), 
+model r2 score: 0.529, rmse: 6.516, mae: 4.767, mape: 0.238
+2022-09-11 17:29:05,976 INFO     
+Trained model Elasticnet, 
+parameters: ElasticNet(alpha=0.1, l1_ratio=0.4), 
+model r2 score: 0.508, rmse: 6.656, mae: 4.934, mape: 0.251
+2022-09-11 17:29:08,911 INFO     
+Trained model xgb_trained, 
+parameters: XGBRegressor(base_score=0.5, booster='gbtree', callbacks=None,
+             colsample_bylevel=1, colsample_bynode=1, colsample_bytree=1,
+             early_stopping_rounds=None, enable_categorical=False,
+             eval_metric=None, gamma=0, gpu_id=-1, grow_policy='depthwise',
+             importance_type=None, interaction_constraints='',
+             learning_rate=0.300000012, max_bin=256, max_cat_to_onehot=4,
+             max_delta_step=0, max_depth=6, max_leaves=0, min_child_weight=1,
+             missing=nan, monotone_constraints='()', n_estimators=6, n_jobs=0,
+             num_parallel_tree=1, predictor='auto', random_state=0, reg_alpha=0,
+             reg_lambda=1, ...), 
+model r2 score: 0.508, rmse: 6.656, mae: 4.934, mape: 0.251

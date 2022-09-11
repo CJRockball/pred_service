@@ -1,16 +1,13 @@
-import numpy as np
 import pandas as pd
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import MinMaxScaler, RobustScaler, \
-                StandardScaler, OneHotEncoder,FunctionTransformer, PowerTransformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder,FunctionTransformer, PowerTransformer
 from sklearn.compose import ColumnTransformer, TransformedTargetRegressor
 from custom_trans import log_transform, func, inverse_func
-
-#Utils
 from typing import List
 import pathlib
 import os
-import joblib
+
+""" Class for pipeline """
 
 ROOT = pathlib.Path(__file__).resolve().parent
 PROCESSED_DATA_DIRNAME = ROOT/ "data/processed/split"
@@ -48,7 +45,7 @@ class TipsPipe():
         self.trained_pipe = None
     
     def make_preprocessor(self, cat_list: List[str], num_list: List[str], count_list: List[str], pass_list: List[str]) -> None:
-        
+        """ Creates transformation pipeline """
         l_transformer = FunctionTransformer(log_transform, feature_names_out='one-to-one')
         log_pipeline = Pipeline([('log_tip', l_transformer), ('ss', StandardScaler())])
         
@@ -64,8 +61,8 @@ class TipsPipe():
     
     def make_preprocessor2(self, cat_list: List[str], num_list: List[str], count_list: List[str], \
         pass_list: List[str], model) -> None:
-         
-        # Apply preprocess
+        """ Creates transformation pipeline with model. Does power-transform on label data """ 
+        
         l_transformer = FunctionTransformer(log_transform, feature_names_out='one-to-one')
         log_pipeline = Pipeline([('log_tip', l_transformer), ('ss', StandardScaler())])
         preprocessor = ColumnTransformer(
@@ -89,19 +86,24 @@ class TipsPipe():
     
     
     def train_pipe(self):
+        """ Trains a data transformation pipline on train data """
         self.trained_pipe = Pipeline(steps=[self.preprocessor]).fit(self.xtrain)
         return
 
     def get_preprocessor(self):
+        """ Returns the preprocessor step """
         return self.preprocessor
     
     def get_pipe(self):
+        """ Returns trained pipeline either transformation pipe or model pipe """
         return self.trained_pipe
      
     def transform_data(self, data):
+        """ Transforms supplied data on current transformation pipeline """
         return self.trained_pipe.transform(data)
     
     def get_feature_names(self):
+        """ Returns pipeline feature names """
         return self.trained_pipe[:-1].get_feature_names_out()
 
 

@@ -2,6 +2,9 @@ import pathlib
 import pandas as pd
 import os
 
+""" Class for data. Loads raw data from source. Splits data in train, val, test"""
+
+
 ROOT = pathlib.Path(__file__).resolve().parent
 
 DATA_FILENAME = ROOT / "data/tips.csv"
@@ -76,10 +79,11 @@ class TipsData():
         
     @classmethod
     def data_dirname(cls):
+        """ Returns file path """
         return pathlib.Path(__file__).resolve().parent
 
     def config(self):
-        """Return important settings of the dataset, which can be passed to model"""
+        """ Return important settings of the dataset, which can be passed to model """
         return {'input_dims':self.indims, 'output_dims': self.outdims}
     
     def __repr__(self):
@@ -87,20 +91,20 @@ class TipsData():
         return data_info
     
     def get_train_data(self):
+        """ Returns train data subset """
         return self.xtrain, self.ytrain
     
     def get_val_data(self):
+        """ Returns val data subset """
         return self.xval, self.yval
     
     def get_raw_data(self):
+        """ Returns raw data, feature+label in same df, feature df, label df """
         return self.xy, self.x, self.y
-
-    def get_raw_data_split(self):
-        return self.x, self.y
     
     
-    
-def _download_and_process_data():
+def _download_and_process_data() -> None:
+    """ Checks if data is downloaded otherwise downloads data """
     if not os.path.exists(RAW_DATA_DIRNAME):
         RAW_DATA_DIRNAME.mkdir(parents=True, exist_ok=True)
         
@@ -116,6 +120,8 @@ def _download_and_process_data():
 
 def _preprocess_data(train_split: float, val_split: float,
                      test_split: float, data_shuffle: bool=False) -> None:
+    
+    """ Some data preprocessing, splits and saves data """
     
     df = pd.read_csv(RAW_DATA_FILENAME)
         

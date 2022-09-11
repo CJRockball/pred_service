@@ -1,8 +1,9 @@
 import sqlite3
 import pathlib
-
+""" This file is used to set up database """
 
 def setup_db(path):
+    """ Function to create database and add tables """
     # Connect to db
     conn = sqlite3.connect(path)
     cur = conn.cursor()
@@ -27,7 +28,7 @@ def setup_db(path):
     
     return
 
-#if __name__ == "__main":
+if __name__ == "__main__":
 ROOT_DIR = pathlib.Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT_DIR / "data"
 DB_PATH = DATA_DIR / "new_tips.db"

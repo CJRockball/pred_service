@@ -1,5 +1,6 @@
 import numpy as np
 
+""" Transform functions for pipeline used by tipspipe.py"""
 
 def log_transform(x):
     return np.log(1+x)

@@ -1,5 +1,5 @@
 import numpy as np
-
+""" This file contains transforms for the data pipeline """
 
 def log_transform(x):
     return np.log(1+x)

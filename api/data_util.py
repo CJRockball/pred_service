@@ -1,6 +1,7 @@
 import httpx
 
 async def get_test_data():
+    """ Call db server to get all the test data"""
     async with httpx.AsyncClient() as client:
         try:
             data_json = await client.get('http://db-data-service.herokuapp.com/tips/test_data') #'http://host.docker.internal:8001/tips/test_data/') #"http://127.0.0.1:8001/tips/test_data") #
@@ -9,6 +10,7 @@ async def get_test_data():
             print(f'An error occurred while requesting {exc.request.url!r}.')
 
 async def get_random_test_row_db():
+    """ Call db server to get a random row of test data"""
     async with httpx.AsyncClient() as client:
         try:
             data_json = await client.get('http://db-data-service.herokuapp.com/tips/get_random_test_data') #http://host.docker.internal:8001/tips/get_random_test_data') #"http://127.0.0.1:8001/tips/get_random_test_data") #

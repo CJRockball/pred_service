@@ -7,7 +7,7 @@ from api.db_utils import write_data
 from fastapi import HTTPException
 
 def predict_test_data(json_data):    
-    
+    """ Function to predict new total bill """
     df = pd.DataFrame(json_data, columns=['total_bill', 'tip', 'sex', 'smoker', 'day', 'time', 'g_size'])
     
     y_true = df.total_bill
@@ -22,6 +22,7 @@ def predict_test_data(json_data):
     return predict_dict
 
 def db_load(json_data, pred_dict):
+    """ Function to load data in database"""
     data_dict = json_data[0]
     del data_dict['total_bill']
     
