@@ -24,7 +24,7 @@ The pipline object is set up to return a train model or a feature transformer. T
 
 Since this is a regression and a relatively simple dataset I explore mostely linear models, with or without regularization. 
 
-After linear models a tree model is tried with XGBoost. It does not improve on metrics. Plotting feature importance, for the tree model, verifies that tips and g_size are the most important features.
+After linear models a tree model is tried with XGBoost. It does not improve on metrics. Plotting feature importance, for the tree model, verifies that tips and g_size are the most important features. Model parameters and metric on validation data is logged in training.log.
 
 ### 4. Microservice
 To demonstrate predictions I will get one row from the test data and run prediction so that it can be compared to the true answer. To make it a bit more realistic I save the data (train and test) on one server ([database server](https://github.com/CJRockball/db_data_service) and have the model on another. The database can be accessed via the web through FastAPI [here](), the endpoints are displayed at the root site. The prediction site can be accessed [here](), the endpoints are displayed here. 
